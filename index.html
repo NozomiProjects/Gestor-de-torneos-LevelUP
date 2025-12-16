@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Torneos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="Logo Torneo" class="logo-img">
+            <h1>🏆 Match Maker 🏆</h1>
+        </div>
+        <nav>
+            <button class="nav-btn active" data-target="seccion-registro">1. Registro de Equipos</button>
+            <button class="nav-btn" data-target="seccion-lista">2. Lista de Participantes</button>
+            <button class="nav-btn" data-target="seccion-bracket">3. Diagrama del Torneo</button>
+        </nav>
+    </header>
+
+    <main id="app-container">
+
+        <section id="seccion-registro" class="seccion activa">
+            <h2>Registrar Nuevo Equipo</h2>
+            <form id="form-equipo">
+                <div class="input-group">
+                    <label for="nombreEquipo">Nombre del Equipo:</label>
+                    <input type="text" id="nombreEquipo" required placeholder="Ej: Los Tryhards">
+                </div>
+                <div class="input-group">
+                    <label for="nickCapitan">Nick del Capitán:</label>
+                    <input type="text" id="nickCapitan" required placeholder="Ej: xSlayerx">
+                </div>
+
+                <h3>Integrantes Adicionales</h3>
+                <div class="jugadores-grid">
+                    <div><input type="text" id="jugador1" placeholder="Jugador 1"></div>
+                    <div><input type="text" id="jugador2" placeholder="Jugador 2"></div>
+                    <div><input type="text" id="jugador3" placeholder="Jugador 3"></div>
+                    <div><input type="text" id="jugador4" placeholder="Jugador 4"></div>
+                    <div><input type="text" id="suplente" placeholder="Suplente" class="suplente-input"></div>
+                </div>
+                <button type="submit" id="btn-agregar">Agregar Equipo</button>
+            </form>
+        </section>
+
+        <section id="seccion-lista" class="seccion">
+            <h2>Equipos Inscriptos (<span id="contador-equipos">0</span>)</h2>
+            <div class="acciones-lista">
+                <button id="btn-borrar-todo" class="danger">⚠️ Borrar todos los equipos</button>
+            </div>
+            <div id="lista-equipos-container" class="equipos-grid">
+            </div>
+        </section>
+
+        <section id="seccion-bracket" class="seccion">
+            <h2>Diagrama del Torneo</h2>
+
+            <div class="controles-bracket">
+                <button id="btn-generar-sorteo">🎲 Realizar Sorteo Aleatorio</button>
+                <button id="btn-descargar-pdf" style="background-color: #ff9f1c; color: #000;">📄 Descargar Reporte
+                    PDF</button>
+                <button id="btn-limpiar-bracket" class="danger" style="display:none;">Reiniciar Torneo</button>
+            </div>
+
+            <div id="bracket-visual" class="bracket-container">
+                <p class="mensaje-vacio">Aún no se ha realizado el sorteo.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
