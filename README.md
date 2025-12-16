@@ -44,12 +44,6 @@
 
 ---
 
-## 📸 Capturas de Pantalla
-
-*(Aquí puedes subir capturas de tu proyecto en funcionamiento. Ejemplos: El formulario de registro y el cuadro del torneo)*
-
----
-
 ## 🔧 Instalación y Uso
 
 Este proyecto es una aplicación web estática, por lo que no requiere instalación de servidores ni bases de datos.
